@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Upcoming from "./pages/Upcoming";
+import Details from "./pages/Details";
 
 
 
@@ -13,10 +14,11 @@ function App() {
       <Navbar />
       <div className="pattern">
         <div className="wrapper">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/upcoming" element={<Upcoming />}/>
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/upcoming" element={<Upcoming />}/>
+              <Route path="/movie/:id" element={<Details />}/>
+            </Routes>
         </div>
       </div>
     </main>
