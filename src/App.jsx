@@ -12,15 +12,11 @@ function App() {
   return (
     <main>
       <Navbar />
-      <div className="pattern">
-        <div className="wrapper">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/upcoming" element={<Upcoming />}/>
               <Route path="/movie/:id" element={<Details />}/>
             </Routes>
-        </div>
-      </div>
     </main>
   )
 }

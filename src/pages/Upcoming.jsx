@@ -41,7 +41,7 @@ function Upcoming () {
     }, [] );
 
     return (
-        <div>
+        <div className="wrapper">
             <h1 className="mb-5 pb-5">Upcoming Movies</h1>
              <ul className="movie-layout">
             {movies.map((movie) => (

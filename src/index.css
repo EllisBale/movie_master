@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
+
 @import "tailwindcss";
 
+
 @theme {
+
   --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
   --background-image-hero-pattern: url("/hero-banner.jpg");
   --font-dm-sans: DM Sans, sans-serif;
 }
 
-
-
-
 @layer base {
+
   body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-optical-sizing: auto;
@@ -26,10 +31,6 @@
 
   h2 {
     @apply my-5 py-3 pl-5  text-3xl font-bold text-white leading-tight break-all;
-  }
-
-  h3 {
-    @apply mt-3 px-2 text-center;
   }
 
 
@@ -55,7 +56,8 @@
 
 
 @layer components {
-  .pattern {
+
+  .homepage .pattern {
     @apply bg-hero-pattern w-full h-screen  bg-center bg-cover absolute z-0;
     background-image: var(--background-image-hero-pattern);
     min-height: 100vh;
@@ -115,7 +117,6 @@
     
 
     &:hover {
-      @apply shadow-[0_1_100px_1px_hsla(0,0%,39%,0.4)] ; /* Currently doesn't work */
       transform: scale(1.05);
       transition-duration: 0.5s;
     }
@@ -126,12 +127,8 @@
   }
 
   .navbar {
-  background-color: #000000;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    @apply bg-black px-8 py-4 flex items-center shadow-md;
+  }
 
 .navbar-brand {
   font-size: 1.5rem;
@@ -173,8 +170,25 @@
     padding: 0.5rem;
   }
 }
-  
 
+}
+
+/* Details page */
+
+.film-description {
+  @apply flex flex-col lg:flex-row;
+}
+
+.film-description .movie-card {
+  @apply flex self-center justify-center content-center h-100 w-100 lg:w-full md:mr-5 max-w-96 min-w-70;
+
+  transform: none;
+  cursor: initial;
+
+}
+
+.film-description .movie-card img {
+  @apply w-auto h-auto;
 }
 
 

@@ -68,22 +68,28 @@ function Home () {
     
     
     return (
-        <>
-        <header>
-            <img src="./hero.png" alt="Hero Banner" />
-            <h1>Explore <span className='text-gradient'>Movies</span>You'll Enjoy! </h1>
-                <Search  searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-            </header>
-            <section>
-                <h2>{searchTerm ? `Search results ${searchTerm}` : "Popular Movies"}  </h2>
-                <ul className="movie-layout">
-                {movieList.map((movie) => (
-                <MovieCard key={movie.id}  movie={movie} />
-                ))}
-                </ul>
-            </section>
-        <header/> 
-    </>
+
+        <div className="homepage">
+          <div className="pattern">
+            <div className="wrapper">
+              <header>
+                  <img src="./hero.png" alt="Hero Banner" />
+                  <h1>Explore <span className='text-gradient'>Movies</span>You'll Enjoy! </h1>
+                      <Search  searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                  </header>
+                  <section>
+                      <h2>{searchTerm ? `Search results ${searchTerm}` : "Popular Movies"}  </h2>
+                      <ul className="movie-layout">
+                      {movieList.map((movie) => (
+                      <MovieCard key={movie.id}  movie={movie} />
+                      ))}
+                      </ul>
+                  </section>
+              <header/>
+            </div>
+          </div>
+        </div>
+
      
     )
 }
